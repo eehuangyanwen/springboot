@@ -36,4 +36,9 @@ public class User {
     public void setNote(String note) {
         this.note = note;
     }
+
+    public void print(){
+        System.out.println("hello!");
+    }
+
 }
