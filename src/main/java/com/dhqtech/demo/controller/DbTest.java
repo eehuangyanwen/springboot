@@ -1,6 +1,6 @@
 package com.dhqtech.demo.controller;
 
-import com.dhqtech.demo.BeanFactory.GetBean;
+//import com.dhqtech.demo.BeanFactory.GetBean;
 import com.dhqtech.demo.dao.UserDao;
 import com.dhqtech.demo.po.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,11 @@ public class DbTest {
 //    @Autowired
 ////    private UserDao userDao =null;
 //    private User yanwen;
+    @Autowired
     private ApplicationContext applicationContext;
     @RequestMapping("/getUser")
     public Object getUser(){
 //        return userDao.getUser(id);
-          return GetBean.getBean("yanwen");
+          return applicationContext.getBean("yanwen");
     }
 }
