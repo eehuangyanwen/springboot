@@ -30,3 +30,5 @@ public class DbTest {
           return applicationContext.getBean("yanwen");
     }
 }
+
+
