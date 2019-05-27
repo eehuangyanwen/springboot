@@ -1,10 +1,13 @@
-//package com.dhqtech.demo.BeanFactory;
-//
-///**
-// * @author eehuangyanwen@163.com
-// * @date 2019/5/20 16:58
-// */
-//
+package com.dhqtech.demo.BeanFactory;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author eehuangyanwen@163.com
+ * @date 2019/5/20 16:58
+ */
+
 //import org.springframework.beans.BeansException;
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.ApplicationContextAware;
@@ -52,3 +55,13 @@
 //    }
 //
 //}
+@Component
+public class GetBean
+{
+    @Bean(name = "noteBean")
+    public NoteBean getNoteBean(){
+        NoteBean noteBean = new NoteBean();
+        noteBean.setNote("hello note!");
+        return noteBean;
+  }
+}

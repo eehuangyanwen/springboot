@@ -1,5 +1,6 @@
 package com.dhqtech.demo.controller;
 
+import com.dhqtech.demo.config.RedisConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -24,14 +25,14 @@ public class RedisTest {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
+    private RedisConfig redisConfig;
+    @Autowired
     private ApplicationContext applicationContext;
     @RequestMapping("/setRedis")
     public Object setRedis(){
-//        return userDao.getUser(id);
-//        RedisSerializer stringRedisSerializer = redisTemplate.getStringSerializer();
-//        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisConfig.initRedisConfig(redisTemplate);
         redisTemplate.opsForValue().set("test","yanwen");
-        redisTemplate.opsForValue().set("jiangping","wodema");
+        redisTemplate.opsForValue().set("huangyanwen","wodema");
         stringRedisTemplate.opsForValue().set("new","one");
         return redisTemplate.opsForValue().get("test");
     }
