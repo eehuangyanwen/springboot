@@ -1,6 +1,7 @@
 package com.dhqtech.demo.BeanFactory;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -55,7 +56,7 @@ import org.springframework.stereotype.Component;
 //    }
 //
 //}
-@Component
+@Configuration
 public class GetBean
 {
     @Bean(name = "noteBean")
